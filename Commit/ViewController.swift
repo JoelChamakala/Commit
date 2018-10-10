@@ -21,16 +21,22 @@ class ViewController: UIViewController {
     }
 
     @IBAction func calculateWhenTapped(_ sender: Any) {
+        let commissionPay = getInput()
+        let totalPay = commissionPay + Double(base)
+        let formattedTotalPay = String(format: "%.2f",  totalPay)
+        totalPayLabel.text = "Total Pay = $\(formattedTotalPay)"
     }
     
     func getInput() -> Double{
         
-        if let commissionPay = commissionPayTextField.text,let pay = Double(commissionPay){
-            print("Has Data")
-        } else {
-            print("No Data")
+        if let commissionPay = commissionPayTextField.text,let pay = Double(commissionPay)
+        {
+            return pay
+            
+        } else{
+            return 0
         }
-        return 13.97
+
     }
     
     
