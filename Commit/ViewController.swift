@@ -25,7 +25,7 @@ class ViewController: UIViewController {
     
     func getInput() -> Double{
         
-        if let commissionPay = commissionPayTextField.text{
+        if let commissionPay = commissionPayTextField.text,let pay = Double(commissionPay){
             print("Has Data")
         } else {
             print("No Data")
